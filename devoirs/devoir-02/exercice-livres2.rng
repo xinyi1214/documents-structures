@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="etagere">
+            <ref name="type_livre"/>
+            <ref name="poussiere"/>
+            <ref name="livre"/>
+            <ref name="magazine"/>
+        </element>
+    </start>
+    <define name="type_livre">
+        <attribute name="type">
+            <data type="token"/>
+        </attribute>
+    </define>
+    <define name="poussiere">
+        <optional>
+            <attribute name="poussiere">
+                <data type="boolean"/>
+            </attribute>
+        </optional>
+    </define>
+    <define name="livre">
+        <oneOrMore>
+            <element name="livre">
+                <optional>
+                    <attribute name="isbn">
+                        <data type="string">
+                            <param name="pattern">[0-9]{3}-[A-Z]{2}[0-9][A-Z]-[a-z]{2}</param>
+                        </data>
+                    </attribute>
+                    <attribute name="prix">
+                        <data type="float"/>
+                    </attribute>
+                </optional>
+                <attribute name="titre"/>
+                <element name="auteur">
+                    <interleave>
+                        <attribute name="nom">
+                            <data type="token"/>
+                        </attribute>
+                        <attribute name="prenom">
+                            <data type="token"/>
+                        </attribute>
+                    </interleave>
+                </element>
+            </element>
+        </oneOrMore>
+    </define>
+    <define name="magazine">
+        <optional>
+        <element name="magazine">
+            <attribute name="isbn">
+                <data type="int"/>
+            </attribute>
+            <attribute name="prix">
+                <data type="float"/>
+            </attribute>
+        </element>
+        </optional>
+    </define>
+</grammar>

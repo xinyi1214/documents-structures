@@ -4,7 +4,7 @@
 <Root>
 	<Element3>John</Element3>
 	<Element3 id="Daniel"/>
-	<Element3 id="Robin" ID="Lukas"/>
+	<Element3 id="Robin" id="Lukas"/>
 	<Element3 id=""/>
 	<Element4 id="Marie"/>
 	<Element5 id="Ann"/>

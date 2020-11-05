@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="factbook-minimal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mondial>
+    <continent id="1" name="Éurope"/>     
+    <conutry id="1" name="France" gdp_total="2600000000000000000" gdp_agri="8035000000">
+        <name>France</name>
+        <city latitude="2000" longitude="50000">
+            <name>Paris</name>
+            <population xmlns="inalco:documents-structures:ns">200000000</population>
+        </city>
+    </conutry>
+</mondial>

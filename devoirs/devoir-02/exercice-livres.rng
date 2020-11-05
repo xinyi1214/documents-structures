@@ -1,28 +1,46 @@
-<element name="bibliotheque" xmlns="http://relaxng.org/ns/structure/1.0">
+<element name="bibliotheque" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 	<element name="etagere">
-		<attribute name="type"/>
+		<attribute name="type">
+			<data type="token"/>
+		</attribute>
 		<optional>
-			<attribute name="poussiere"/>
+			<attribute name="poussiere">
+				<data type="boolean"/>
+			</attribute>
 		</optional>
 		<oneOrMore>
 			<element name="livre">
 				<optional>
-					<attribute name="isbn"/>
-					<attribute name="prix"/>
+					<attribute name="isbn">
+						<data type="string">
+							<param name="pattern">[0-9]{3}-[A-Z]{2}[0-9][A-Z]-[a-z]{2}</param>
+						</data>
+					</attribute>
+					<attribute name="prix">
+						<data type="float"/>
+					</attribute>
 				</optional>
 				<attribute name="titre"/>
 				<element name="auteur">
 					<interleave>
-						<attribute name="nom"/>
-						<attribute name="prenom"/>
+						<attribute name="nom">
+							<data type="token"/>
+						</attribute>
+						<attribute name="prenom">
+							<data type="token"/>
+						</attribute>
 					</interleave>
 				</element>
 			</element>
 		</oneOrMore>
 		<optional>
 			<element name="magazine">
-				<attribute name="isbn"/>
-				<attribute name="prix"/>
+				<attribute name="isbn">
+					<data type="int"/>
+				</attribute>
+				<attribute name="prix">
+					<data type="float"/>
+				</attribute>
 			</element>
 		</optional>
 	</element>
