@@ -1,0 +1,8 @@
+1./juicers/juicer[@type="centrifugal"]/string()
+2./juicers/juicer[@type="centrifugal"][last()]/string()
+3.
+4./juicers/juicer/name/string()
+5.count(/juicers/juicer[name="Juiceman Jr."]/preceding-sibling::*)+1
+6./juicers/juicer/name/string()
+7.count(/juicers/juicer[name="Juiceman Jr."]/preceding-sibling::*)+1
+8.

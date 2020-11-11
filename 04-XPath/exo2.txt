@@ -1,0 +1,22 @@
+1. /pdv_liste
+2. /pdv_liste/pdv
+3. /pdv_liste/pdv/ville
+4. /pdv_liste/pdv[46]/services/service
+5. /pdv_liste/pdv/prix[last()]
+6. /pdv_liste/pdv[@id="3150005"]
+7. /pdv_liste/pdv/services/service[not(contains(text(), "GPL"))]
+8. //following-sibling::*
+9. //pdv[@cp = "16170"]/ville
+10.//pdv[ouverture/@saufjour = "lundi"] ?
+11.//pdv[services/service='Relais colis']
+12.//services/service[10]following-sibling::text()[contains(., 'Piste poids lourds')] ?
+13. /pdv_liste/pdv/ville[following-sibling::rupture/@nom="SP95" and @début="2013-02-04"]
+14. /pdv_liste/pdv[ouverture/@fin and not(string-length(@fin))]
+15. /pdv_liste/pdv/ville = "La Mure"/following-sibling::prix/@nom="E10"
+16. count(//*)
+17. /pdv_liste/pdv/adresse/string-length(text())
+18. max(/pdv_liste/pdv/adresse/string-length(text()))
+19. /pdv_liste/pdv[ouverture/not(@fin = "20:00")]
+20. 
+21. 
+22.
