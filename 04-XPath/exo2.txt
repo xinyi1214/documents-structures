@@ -9,7 +9,7 @@
 9. //pdv[@cp = "16170"]/ville
 10.//pdv[ouverture/@saufjour = "lundi"] ?
 11.//pdv[services/service='Relais colis']
-12.//services/service[10]following-sibling::text()[contains(., 'Piste poids lourds')] ?
+12.//services/service[10]following-sibling::text()[contains(., 'Piste poids lourds')] 
 13. /pdv_liste/pdv/ville[following-sibling::rupture/@nom="SP95" and @début="2013-02-04"]
 14. /pdv_liste/pdv[ouverture/@fin and not(string-length(@fin))]
 15. /pdv_liste/pdv/ville = "La Mure"/following-sibling::prix/@nom="E10"

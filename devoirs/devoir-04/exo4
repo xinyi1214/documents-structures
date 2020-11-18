@@ -1,0 +1,39 @@
+1. for $item in //*
+    return $item
+2. for $prix in //pdv/prix[@nom="Gazole"]/@valeur
+	return $prix*2.5
+3.for $item in /pdv_liste/pdv/adresse , $item2 in /pdv_liste/pdv/ville
+return concat($item, ' ', $item2)
+
+1.for $item in (1 to 100)
+return
+    if ($item mod 3 = 0) then $item
+    else()
+2. for $i in //pdv return if (count($i/services/service) = 1 and $i/services/service = "Vente de gaz domestique") then $i/@id else $i/adresse
+3. for $item in /pdv_liste/pdv/adresse
+return
+if (/pdv_liste/pdv/adresse[contains(text(), 'Avenue')]) then upper-case($item)
+else()
+
+1. for $item in /pdv_liste/pdv/services
+return $item/service union $item/service
+2. for $item in /pdv_liste/pdv
+return
+if (/pdv_liste/pdv/prix[@nom = 'SP95'] union /pdv_liste/pdv/prix[@nom = 'SP98']) then $item else()
+
+Intersect
+for $item in //pdv
+return
+if (//pdv[rupture] union //pdv/ouverture[@saufjour[contains(text(), 'dimanche')]]) then $item
+else()
+
+except
+//pdv
+except
+//pdv[@pop="N"]
+
+some
+some $pdv in /pdv_liste/pdv satisfies  not(./sevices/service="Automate CB")
+
+every
+every $pdv in /pdv_liste/pdv satisfies ./ouverture/@saufjour=""
